@@ -14,8 +14,8 @@ if (
 ) {
     Write-Host "Deploying to PSGallery"
     Deploy Module {
-        By PSGalleryModule ePOwerShell {
-            FromSource "${PSScriptRootParent}\dev\BuildOutput\ePOwerShell"
+        By PSGalleryModule Posh-GitLab {
+            FromSource "${PSScriptRootParent}\dev\BuildOutput\Posh-GitLab"
             To PSGallery
             WithOptions @{
                 ApiKey = $env:PSGalleryApiKey
