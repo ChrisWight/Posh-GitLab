@@ -1,4 +1,4 @@
-function Get-GitlLabProjectFork {
+function Get-GLProject {
     [CmdletBinding()]
     param (
         [Parameter(Mandatory = $True, Position = 0)]

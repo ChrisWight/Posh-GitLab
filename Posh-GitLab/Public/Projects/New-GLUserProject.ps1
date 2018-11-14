@@ -1,4 +1,4 @@
-function Get-GitlLabUserProject {
+function New-GLUserProject {
     [CmdletBinding()]
     param (
         [Parameter(Mandatory = $True, Position = 0)]
@@ -54,3 +54,4 @@ function Get-GitlLabUserProject {
         [String]
         $MinimumAccessLevel
     )
+}
