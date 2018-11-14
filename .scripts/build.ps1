@@ -25,7 +25,7 @@
 #>
 $ErrorActionPreference = 'Stop'
 
-$script:thisModuleName = 'ePOwerShell'
+$script:thisModuleName = 'Posh-GitLab'
 $script:PSScriptRootParent = Split-Path $PSScriptRoot -Parent
 $script:ManifestJsonFile = "${PSScriptRootParent}\${thisModuleName}\Manifest.json"
 $script:BuildOutput = "${PSScriptRootParent}\dev\BuildOutput"
