@@ -1,0 +1,38 @@
+{
+    "StatusCode": 200,
+    "Content": {
+        "id": 1,
+        "name": "John Smith",
+        "username": "John.Smith",
+        "state": "active",
+        "avatar_url": "https://git.domain.com/uploads/-/system/user/avatar/13/avatar.png",
+        "web_url": "https://git.domain.com/John.Smith",
+        "created_at": "2014-02-05T12:04:17.728-06:00",
+        "bio": "",
+        "location": "",
+        "skype": "",
+        "linkedin": "",
+        "twitter": "",
+        "website_url": "",
+        "organization": "",
+        "last_sign_in_at": "2018-11-12T15:30:41.889-06:00",
+        "confirmed_at": "2014-02-05T12:04:17.955-06:00",
+        "last_activity_on": "2018-11-13",
+        "email": "John.Smith@domain.com",
+        "theme_id": 2,
+        "color_scheme_id": 4,
+        "projects_limit": 50,
+        "current_sign_in_at": "2018-11-15T21:05:32.250-06:00",
+        "identities": [
+            {
+                "provider": "ldapmain",
+                "extern_uid": "cn=jsmith,ou=OU2,ou=OU1,dc=ad,dc=domain,dc=com"
+            }
+        ],
+        "can_create_group": false,
+        "can_create_project": true,
+        "two_factor_enabled": false,
+        "external": false,
+        "private_profile": null
+    }
+}
