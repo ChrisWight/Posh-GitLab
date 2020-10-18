@@ -1,8 +1,8 @@
 <#
 .Synopsis
-   Updates a link for a Gitlab Relase.
+   Updates a link for a Gitlab Release.
 .DESCRIPTION
-   Updates a link for a Gitlab Relase.
+   Updates a link for a Gitlab Release.
 .EXAMPLE
    Update-GLReleaseLink -ProjectID 203 -TagName 'v1.0.0.15' -LinkId 14 -UrlString = 'https://github.com/ChrisWight/Posh-GitLab'
 .EXAMPLE

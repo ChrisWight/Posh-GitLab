@@ -1,8 +1,8 @@
 <#
 .Synopsis
-   Gets one or more links from a Gitlab Relase.
+   Gets one or more links from a Gitlab Release.
 .DESCRIPTION
-   Gets one or more links from a Gitlab Relase. Will either return all links for the given project and tag or a specific link if the LinkID is specified.
+   Gets one or more links from a Gitlab Release. Will either return all links for the given project and tag or a specific link if the LinkID is specified.
 .EXAMPLE
    Get-GLReleaseLink -ProjectID 203 -TagName 'v1.0.0.15'
 .EXAMPLE
@@ -53,20 +53,17 @@ function Get-GLReleaseLink
     link_id	integer	yes	The ID of the link.
 
 #>
-
-
-
     switch ($PSCmdlet.ParameterSetName) {
         'FindSpecific' {
-            $Invoke_GitLabRequest = @{
-                'Resource' = "projects/$ProjectID/releases/$TagName/$LinkID"
-            }
+            $Resource = "projects/$ProjectID/releases/$TagName/$LinkID"
         }
         'FindAll' {
-            $Invoke_GitLabRequest = @{
-                'Resource' = "projects/$ProjectID/releasesy/$TagName/assets/links"
-            }
+            $Resource = "projects/$ProjectID/releasesy/$TagName/assets/links"
         }
+    }
+
+    $Invoke_GitLabRequest = @{
+        'Resource' = $Resource
     }
 
     Write-Debug "[Get-GLReleaseLink] Invoke-GLRequest: $($Invoke_GitLabRequest | ConvertTo-Json)"

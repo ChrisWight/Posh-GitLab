@@ -1,8 +1,8 @@
 <#
 .Synopsis
-   Removes a link for a Gitlab Relase.
+   Removes a link for a Gitlab Release.
 .DESCRIPTION
-   Removes a link for a Gitlab Relase.
+   Removes a link for a Gitlab Release.
 .EXAMPLE
    Remove-GLReleaseLink -ProjectID 203 -TagName 'v1.0.0.15' -LinkID 14
 #>
