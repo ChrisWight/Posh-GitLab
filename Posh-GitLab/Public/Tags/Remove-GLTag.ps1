@@ -7,6 +7,7 @@ function Remove-GLTag {
         $ProjectID,
 
         [Parameter(Mandatory = $True, Position = 1)]
+        [ValidateNotNullOrEmpty()]
         [String]
         $TagName
     )
