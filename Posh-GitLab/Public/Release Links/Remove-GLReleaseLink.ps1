@@ -12,16 +12,22 @@ function Remove-GLReleaseLink
     [Alias()]
     [OutputType()]
     param(
+
+        # The ID of a project or urlencoded NAMESPACE/PROJECT_NAME of the project owned by the authenticated user
         [Parameter(Mandatory = $True, Position = 0)]
         [ValidateNotNullOrEmpty()]
         [String]
         $ProjectID,
 
+        # The tag associated with the Release.
         [Parameter(Mandatory = $True, Position = 1)]
+        [ValidateNotNullOrEmpty()]
         [String]
         $TagName,
 
-        [Parameter(Mandatory = $True, Position = 1)]
+        # The ID of the link.
+        [Parameter(Mandatory = $True, Position = 2)]
+        [ValidateNotNullOrEmpty()]
         [String]
         $LinkID
     )

@@ -14,18 +14,23 @@ function Get-GLReleaseLink
     [Alias()]
     [OutputType()]
     param(
+        # The ID of a project or urlencoded NAMESPACE/PROJECT_NAME of the project owned by the authenticated user
         [Parameter(Mandatory = $True, Position = 0, ParameterSetName = 'FindAll')]
         [Parameter(Mandatory = $True, Position = 0, ParameterSetName = 'FindSpecific')]
         [ValidateNotNullOrEmpty()]
         [String]
         $ProjectID,
 
+        # The tag associated with the Release.
         [Parameter(Mandatory = $true, Position = 1, ParameterSetName = 'FindAll')]
         [Parameter(Mandatory = $true, Position = 1, ParameterSetName = 'FindSpecific')]
+        [ValidateNotNullOrEmpty()]
         [String]
         $TagName,
 
+        # The ID of the link.
         [Parameter(Mandatory = $False, Position = 2, ParameterSetName = 'FindSpecific')]
+        [ValidateNotNullOrEmpty()]
         [String]
         $LinkID
     )

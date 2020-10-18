@@ -14,28 +14,36 @@ function Update-GLReleaseLink
     [Alias()]
     [OutputType()]
     param (
+
+        # The ID of a project or urlencoded NAMESPACE/PROJECT_NAME of the project owned by the authenticated user
         [Parameter(Mandatory = $True, Position = 0)]
         [ValidateNotNullOrEmpty()]
         [String]
         $ProjectID,
 
+        # The tag associated with the Release.
         [Parameter(Mandatory = $True, Position = 1)]
         [ValidateNotNullOrEmpty()]
         [String]
         $TagName,
 
+        # The ID of the link.
         [Parameter(Mandatory = $True, Position = 2)]
+        [ValidateNotNullOrEmpty()]
         [String]
         $LinkID,
 
+        # The name of the link.
         [ValidateNotNullOrEmpty()]
         [String]
         $Name,
 
+        # The URL of the link.
         [ValidateNotNullOrEmpty()]
         [String]
-        $UrlString,
+        $Url,
 
+        # The type of the link: other, runbook, image, package. Defaults to other.
         [ValidateSet('other', 'runbook', 'image', 'package')]
         [ValidateNotNullOrEmpty()]
         [String]
@@ -56,11 +64,16 @@ link_type	string	no	The type of the link: other, runbook, image, package. Defaul
     #Create a hashtable for parameters and add them if they have been specified when the function was called
     $GLParameters = @{tag_name= $TagName}
 
-    foreach($ParameterName in ('Name','UrlString','LinkType'))
+    $ParameterConversion = @(@{Function='Name'; Gitlab='key'},
+                             @{Function='Url'; Gitlab='url'},
+                             @{Function='LinkType'; Gitlab='link_type'}
+                            )
+
+    foreach($ParameterName in $ParameterConversion)
     {
-        if($PSBoundParameters.ContainsKey($ParameterName))
+        if($PSBoundParameters.ContainsKey($ParameterName.Function))
         {
-            [void]$GLParameters.Add($ParameterName,$PSBoundParameters[$ParameterName])
+            [void]$GLParameters.Add($ParameterName.Gitlab,$PSBoundParameters[$ParameterName.Function])
         }
     }
 
