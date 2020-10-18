@@ -1,8 +1,8 @@
 <#
 .Synopsis
-   Creates a new Relase link for a Gitlab Relase.
+   Creates a new link for a Gitlab Relase.
 .DESCRIPTION
-   Creates a new Relase link for a Gitlab Relase.
+   Creates a new link for a Gitlab Relase.
 .EXAMPLE
    New-GLReleaseLink -ProjectID 203 -TagName 'v1.0.0.15' -Name 'Github Repository' -UrlString = 'https://github.com/ChrisWight/Posh-GitLab'
 .EXAMPLE
